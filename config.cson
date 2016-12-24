@@ -1,0 +1,16 @@
+"*":
+  core:
+    closeEmptyWindows: false
+    telemetryConsent: "no"
+  editor:
+    fontFamily: "Operator mono"
+    fontSize: 16
+    invisibles: {}
+    showInvisibles: true
+    softTabs: false
+    tabLength: 4
+    tabType: "hard"
+  "exception-reporting":
+    userId: "3b99447e-343c-77ef-213e-9661a6182c4a"
+  "nord-atom-ui":
+    darkerFormFocusEffect: true
