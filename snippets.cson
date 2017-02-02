@@ -20,10 +20,9 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
-'source.javascript':
+'.source.js':
 	'Test itify':
 		'prefix': 'it'
-		'body': ''
 		'body': """
 			it('should $1', function() {
 				$2
