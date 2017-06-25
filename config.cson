@@ -2,6 +2,10 @@
   core:
     closeEmptyWindows: false
     telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "pure-syntax"
+    ]
   editor:
     fontFamily: "Operator mono"
     fontSize: 18

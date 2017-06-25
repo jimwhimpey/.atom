@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-11703-58785-j8d73y/package.tgz",
+        "raw": "/private/var/folders/kl/1c739hjx7bs0n532363hjg2w0000gn/T/d-117417-36955-ldchys/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-11703-58785-j8d73y/package.tgz",
-        "spec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-11703-58785-j8d73y/package.tgz",
+        "rawSpec": "/private/var/folders/kl/1c739hjx7bs0n532363hjg2w0000gn/T/d-117417-36955-ldchys/package.tgz",
+        "spec": "/private/var/folders/kl/1c739hjx7bs0n532363hjg2w0000gn/T/d-117417-36955-ldchys/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/apm-install-dir-11703-58785-1ldujyh"
+      "/private/var/folders/kl/1c739hjx7bs0n532363hjg2w0000gn/T/apm-install-dir-117417-36955-1ds75do"
     ]
   ],
-  "_from": "../d-11703-58785-j8d73y/package.tgz",
-  "_id": "language-smarty@1.7.0",
+  "_from": "../d-117417-36955-ldchys/package.tgz",
+  "_id": "language-smarty@1.8.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/language-smarty",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-11703-58785-j8d73y/package.tgz",
+    "raw": "/private/var/folders/kl/1c739hjx7bs0n532363hjg2w0000gn/T/d-117417-36955-ldchys/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-11703-58785-j8d73y/package.tgz",
-    "spec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-11703-58785-j8d73y/package.tgz",
+    "rawSpec": "/private/var/folders/kl/1c739hjx7bs0n532363hjg2w0000gn/T/d-117417-36955-ldchys/package.tgz",
+    "spec": "/private/var/folders/kl/1c739hjx7bs0n532363hjg2w0000gn/T/d-117417-36955-ldchys/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11703-58785-j8d73y/package.tgz",
-  "_shasum": "7df0b62db99bb052959f04ea5fc19439966fd1cf",
+  "_resolved": "file:../d-117417-36955-ldchys/package.tgz",
+  "_shasum": "280f9fea0f235765d12f0481e3cd26fc5b6d45ad",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-11703-58785-j8d73y/package.tgz",
-  "_where": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/apm-install-dir-11703-58785-1ldujyh",
+  "_spec": "/private/var/folders/kl/1c739hjx7bs0n532363hjg2w0000gn/T/d-117417-36955-ldchys/package.tgz",
+  "_where": "/private/var/folders/kl/1c739hjx7bs0n532363hjg2w0000gn/T/apm-install-dir-117417-36955-1ds75do",
   "bugs": {
     "url": "https://github.com/MaxGiting/atom-language-smarty/issues"
   },
@@ -55,5 +55,5 @@
     "type": "git",
     "url": "git+https://github.com/MaxGiting/atom-language-smarty.git"
   },
-  "version": "1.7.0"
+  "version": "1.8.0"
 }

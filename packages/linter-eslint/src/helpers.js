@@ -5,12 +5,10 @@ import { createFromProcess } from 'process-communication'
 import { join } from 'path'
 import escapeHTML from 'escape-html'
 import ruleURI from 'eslint-rule-documentation'
-import { rangeFromLineNumber } from 'atom-linter'
+import { generateRange } from 'atom-linter'
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/extensions
 import { Disposable, Range } from 'atom'
-
-const RULE_OFF_SEVERITY = 0
 
 export function spawnWorker() {
   const env = Object.create(process.env)
@@ -53,13 +51,6 @@ export function showError(givenMessage, givenDetail = null) {
   })
 }
 
-export function idsToIgnoredRules(ruleIds = []) {
-  return ruleIds.reduce((ids, id) => {
-    ids[id] = RULE_OFF_SEVERITY
-    return ids
-  }, {})
-}
-
 function validatePoint(textEditor, line, col) {
   const buffer = textEditor.getBuffer()
   // Clip the given point to a valid one, and check if it equals the original
@@ -70,10 +61,25 @@ function validatePoint(textEditor, line, col) {
 
 export async function getDebugInfo(worker) {
   const textEditor = atom.workspace.getActiveTextEditor()
-  const filePath = textEditor.getPath()
+  let filePath
+  let editorScopes
+  if (atom.workspace.isTextEditor(textEditor)) {
+    filePath = textEditor.getPath()
+    editorScopes = textEditor.getLastCursor().getScopeDescriptor().getScopesArray()
+  } else {
+    // Somehow this can be called with no active TextEditor, impossible I know...
+    filePath = 'unknown'
+    editorScopes = ['unknown']
+  }
   const packagePath = atom.packages.resolvePackagePath('linter-eslint')
-  // eslint-disable-next-line import/no-dynamic-require
-  const linterEslintMeta = require(join(packagePath, 'package.json'))
+  let linterEslintMeta
+  if (packagePath === undefined) {
+    // Apparently for some users the package path fails to resolve
+    linterEslintMeta = { version: 'unknown!' }
+  } else {
+    // eslint-disable-next-line import/no-dynamic-require
+    linterEslintMeta = require(join(packagePath, 'package.json'))
+  }
   const config = atom.config.get('linter-eslint')
   const hoursSinceRestart = Math.round((process.uptime() / 3600) * 10) / 10
   let returnVal
@@ -93,6 +99,7 @@ export async function getDebugInfo(worker) {
       platform: process.platform,
       eslintType: response.type,
       eslintPath: response.path,
+      editorScopes,
     }
   } catch (error) {
     atom.notifications.addError(`${error}`)
@@ -108,7 +115,8 @@ export async function generateDebugString(worker) {
     `ESLint version: ${debug.eslintVersion}`,
     `Hours since last Atom restart: ${debug.hoursSinceRestart}`,
     `Platform: ${debug.platform}`,
-    `Using ${debug.eslintType} ESLint from ${debug.eslintPath}`,
+    `Using ${debug.eslintType} ESLint from: ${debug.eslintPath}`,
+    `Current file's scopes: ${JSON.stringify(debug.editorScopes, null, 2)}`,
     `linter-eslint configuration: ${JSON.stringify(debug.linterEslintConfig, null, 2)}`
   ]
   return details.join('\n')
@@ -145,7 +153,7 @@ const generateInvalidTrace = async (
     html: `${escapeHTML(titleText)}. See the trace for details. ` +
       `<a href="${newIssueURL}">Report this!</a>`,
     filePath,
-    range: rangeFromLineNumber(textEditor, 0),
+    range: generateRange(textEditor, 0),
     trace: [
       {
         type: 'Trace',
@@ -208,7 +216,7 @@ export async function processESLintMessages(response, textEditor, showRule, work
       msgEndCol = endColumn - 1
     } else {
       // We want msgCol to remain undefined if it was initially so
-      // `rangeFromLineNumber` will give us a range over the entire line
+      // `generateRange` will give us a range over the entire line
       msgCol = typeof column !== 'undefined' ? column - 1 : column
     }
 
@@ -220,7 +228,7 @@ export async function processESLintMessages(response, textEditor, showRule, work
         validatePoint(textEditor, msgEndLine, msgEndCol)
         range = [[msgLine, msgCol], [msgEndLine, msgEndCol]]
       } else {
-        range = rangeFromLineNumber(textEditor, msgLine, msgCol)
+        range = generateRange(textEditor, msgLine, msgCol)
       }
       ret = {
         filePath,
@@ -230,9 +238,8 @@ export async function processESLintMessages(response, textEditor, showRule, work
 
       if (showRule) {
         const elName = ruleId ? 'a' : 'span'
-        const href = ruleId ? ` href=${ruleURI(ruleId).url}` : ''
-        ret.html = `<${elName}${href} class="badge badge-flexible eslint">` +
-          `${ruleId || 'Fatal'}</${elName}> ${escapeHTML(message)}`
+        const href = ruleId ? ` href="${ruleURI(ruleId).url}"` : ''
+        ret.html = `${escapeHTML(message)} (<${elName}${href}>${ruleId || 'Fatal'}</${elName}>)`
       } else {
         ret.text = message
       }
@@ -243,7 +250,7 @@ export async function processESLintMessages(response, textEditor, showRule, work
       if (!err.message.startsWith('Line number ') &&
         !err.message.startsWith('Column start ')
       ) {
-        // This isn't an invalid point error from `rangeFromLineNumber`, re-throw it
+        // This isn't an invalid point error from `generateRange`, re-throw it
         throw err
       }
       ret = await generateInvalidTrace(
