@@ -2,40 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-117031-4083-131919z/package.tgz",
+        "raw": "/private/var/folders/gn/3w4v71xj1p3g_bqjmg48sj8r0000gn/T/d-117815-64265-1ruxu60.7hirkep14i/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-117031-4083-131919z/package.tgz",
-        "spec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-117031-4083-131919z/package.tgz",
+        "rawSpec": "/private/var/folders/gn/3w4v71xj1p3g_bqjmg48sj8r0000gn/T/d-117815-64265-1ruxu60.7hirkep14i/package.tgz",
+        "spec": "/private/var/folders/gn/3w4v71xj1p3g_bqjmg48sj8r0000gn/T/d-117815-64265-1ruxu60.7hirkep14i/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/apm-install-dir-117031-4083-pdyf5w"
+      "/private/var/folders/gn/3w4v71xj1p3g_bqjmg48sj8r0000gn/T/apm-install-dir-117815-64265-1aw8n9m.9hjifwdn29"
     ]
   ],
-  "_from": "../d-117031-4083-131919z/package.tgz",
+  "_from": "../d-117815-64265-1ruxu60.7hirkep14i/package.tgz",
   "_id": "multi-cursor@2.1.5",
   "_inCache": true,
-  "_installable": true,
   "_location": "/multi-cursor",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-117031-4083-131919z/package.tgz",
+    "raw": "/private/var/folders/gn/3w4v71xj1p3g_bqjmg48sj8r0000gn/T/d-117815-64265-1ruxu60.7hirkep14i/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-117031-4083-131919z/package.tgz",
-    "spec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-117031-4083-131919z/package.tgz",
+    "rawSpec": "/private/var/folders/gn/3w4v71xj1p3g_bqjmg48sj8r0000gn/T/d-117815-64265-1ruxu60.7hirkep14i/package.tgz",
+    "spec": "/private/var/folders/gn/3w4v71xj1p3g_bqjmg48sj8r0000gn/T/d-117815-64265-1ruxu60.7hirkep14i/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117031-4083-131919z/package.tgz",
+  "_resolved": "file:../d-117815-64265-1ruxu60.7hirkep14i/package.tgz",
   "_shasum": "4a12c89e588d2b7c718d8fb892fe774e3d97f5dc",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/d-117031-4083-131919z/package.tgz",
-  "_where": "/private/var/folders/ff/gkjbg9_x4d7893720zvnl29m0000gn/T/apm-install-dir-117031-4083-pdyf5w",
+  "_spec": "/private/var/folders/gn/3w4v71xj1p3g_bqjmg48sj8r0000gn/T/d-117815-64265-1ruxu60.7hirkep14i/package.tgz",
+  "_where": "/private/var/folders/gn/3w4v71xj1p3g_bqjmg48sj8r0000gn/T/apm-install-dir-117815-64265-1aw8n9m.9hjifwdn29",
   "activationCommands": {
     "atom-workspace": [
       "multi-cursor:expandDown",
@@ -68,5 +67,18 @@
     "type": "git",
     "url": "git+https://github.com/joseramonc/multi-cursor.git"
   },
-  "version": "2.1.5"
+  "version": "2.1.5",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib/multi-cursor.coffee"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
 }

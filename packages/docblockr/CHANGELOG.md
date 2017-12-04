@@ -1,3 +1,35 @@
+# 0.11.0 (16 Jul 2017)
+* Add support for Processing (#275)
+
+# 0.10.6 (16 Jul 2017)
+* Fixed a subtle bug related to text inputs in Atom's docks (#278)
+* Added support for final methods in PHP (#277)
+
+# 0.10.5 (21 Jun 2017)
+* Fixed constructors in c++ (#273)
+* Fixed generic types (template) in c++ method signatures (#234)
+
+# 0.10.4 (21 Jun 2017)
+* Nothing
+
+# 0.10.3 (19 May 2017)
+* Fixed missing `@return` annotations in PHP code (#269)
+
+# 0.10.2 (19 May 2017)
+* Fixed last release
+
+# 0.10.1 (19 May 2017)
+* Fixed Uncaught TypeError in editors not in the workspace (#268)
+
+# 0.10.0 (18 May 2017)
+* Added method to automatically add `@constructor` annotations in JavaScript (#34)
+* Fixed `spacer_between_sections` setting (#208)
+* Fixed recognition of Java methods with an array return type (#244)
+
+# 0.9.5 (18 May 2017)
+* Fixed handling of editors not in the workspace (#266)
+* Fixed recognition of varibles and functions in PHP (#259)
+
 # 0.9.4 (27 Mar 2017)
 * Fixed typo regarding curly types
 

@@ -1,6 +1,10 @@
 "*":
   core:
     closeEmptyWindows: false
+    disabledPackages: [
+      "atom-ternjs"
+      "highlight-selected"
+    ]
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
@@ -8,7 +12,7 @@
     ]
   editor:
     fontFamily: "Operator mono"
-    fontSize: 18
+    fontSize: 17
     invisibles: {}
     preferredLineLength: 250
     scrollPastEnd: true
@@ -19,6 +23,8 @@
     tabType: "hard"
   "exception-reporting":
     userId: "3b99447e-343c-77ef-213e-9661a6182c4a"
+  "linter-ui-default":
+    showPanel: true
   "nord-atom-ui":
     darkerFormFocusEffect: true
   welcome:

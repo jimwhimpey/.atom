@@ -24,7 +24,7 @@
 	'Test itify':
 		'prefix': 'it'
 		'body': """
-			it('should $1', function() {
+			it('should $1', () => {
 				$2
 			});
 		"""
